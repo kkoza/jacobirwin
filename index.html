@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jacob | Guitarist</title>
+    <title>Jacob Irwin | Master Guitar</title>
     <style>
         * {
             margin: 0;
@@ -12,392 +12,644 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
-            background: #0a0a0a;
-            color: #fff;
-            line-height: 1.6;
+            font-family: 'Georgia', serif;
+            background: #f5f1e8;
+            color: #2c2c2c;
+            line-height: 1.7;
         }
 
         /* Hero Section */
         .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            gap: 4rem;
             align-items: center;
-            text-align: center;
-            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
-            position: relative;
-            overflow: hidden;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(96, 165, 250, 0.15) 0%, transparent 50%);
-            animation: pulse 8s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 0.5; }
-            50% { opacity: 1; }
+        .hero-image {
+            width: 100%;
+            height: 700px;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000"><rect fill="%23d4cfc0" width="800" height="1000"/><text x="50%" y="50%" font-size="24" fill="%236b6b6b" text-anchor="middle" dominant-baseline="middle">Jacob Irwin playing guitar in van</text></svg>');
+            background-size: cover;
+            background-position: center;
+            border-radius: 4px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
         }
 
         .hero-content {
-            position: relative;
-            z-index: 1;
+            padding: 2rem;
+        }
+
+        .eyebrow {
+            font-size: 0.9rem;
+            color: #8b7355;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1.5rem;
         }
 
         h1 {
-            font-size: 5rem;
-            font-weight: 900;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: slideUp 1s ease-out;
+            font-size: 3.5rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            color: #1a1a1a;
         }
 
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .hero-description {
+            font-size: 1.2rem;
+            color: #5a5a5a;
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
         }
 
-        .tagline {
-            font-size: 1.5rem;
-            color: #999;
-            margin-bottom: 2rem;
-            animation: slideUp 1s ease-out 0.2s both;
-        }
-
-        .cta-button {
+        .cta-primary {
             display: inline-block;
             padding: 1rem 2.5rem;
-            background: linear-gradient(135deg, #dc2626 0%, #9333ea 100%);
+            background: #d97706;
             color: white;
             text-decoration: none;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1.1rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            animation: slideUp 1s ease-out 0.4s both;
+            border-radius: 2px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            font-family: 'Arial', sans-serif;
+            letter-spacing: 0.5px;
         }
 
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(220, 38, 38, 0.4);
+        .cta-primary:hover {
+            background: #b45309;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(217, 119, 6, 0.3);
+        }
+
+        .stats {
+            display: flex;
+            gap: 3rem;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #d4cfc0;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #d97706;
+            display: block;
+        }
+
+        .stat-label {
+            color: #8b7355;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Section Styling */
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 400;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: #1a1a1a;
+        }
+
+        /* Problems Section */
+        .problems {
+            background: #ebe7dc;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .problem-card {
+            background: #f5f1e8;
+            padding: 2rem;
+            border-left: 3px solid #d97706;
+        }
+
+        .problem-card h3 {
+            color: #d97706;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .problem-card p {
+            color: #5a5a5a;
+            line-height: 1.8;
+        }
+
+        /* Course Modules */
+        .modules-grid {
+            display: grid;
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .module {
+            background: white;
+            padding: 2rem;
+            border-left: 3px solid #8b7355;
+            transition: all 0.3s ease;
+        }
+
+        .module:hover {
+            border-left-color: #d97706;
+            transform: translateX(8px);
+        }
+
+        .module-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .module-number {
+            background: #d97706;
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            margin-right: 1rem;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .module h3 {
+            color: #1a1a1a;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .module p {
+            color: #5a5a5a;
+            line-height: 1.8;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: #ebe7dc;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial {
+            background: #f5f1e8;
+            padding: 2.5rem;
+            position: relative;
+        }
+
+        .testimonial::before {
+            content: '"';
+            font-size: 5rem;
+            color: #d4cfc0;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-family: Georgia, serif;
+        }
+
+        .testimonial-text {
+            color: #5a5a5a;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            color: #d97706;
+            font-weight: 600;
+            font-style: normal;
+        }
+
+        .testimonial-meta {
+            color: #8b7355;
+            font-size: 0.9rem;
         }
 
         /* About Section */
         .about {
-            padding: 6rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .about h2 {
-            font-size: 3rem;
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-
-        .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
         }
 
-        .about-text {
-            font-size: 1.2rem;
-            color: #ccc;
-            line-height: 1.8;
+        .about-image {
+            width: 100%;
+            height: 500px;
+            background: #d4cfc0;
+            border-radius: 4px;
         }
 
-        .skills {
+        .about-text h2 {
+            font-size: 2.5rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            color: #1a1a1a;
+        }
+
+        .about-text p {
+            color: #5a5a5a;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .credentials {
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
+            gap: 1rem;
+            margin-top: 2rem;
         }
 
-        .skill {
-            background: #1a1a1a;
-            padding: 1.5rem;
-            border-radius: 10px;
-            border-left: 4px solid #dc2626;
-            transition: transform 0.3s ease, border-color 0.3s ease;
+        .credential {
+            display: flex;
+            align-items: center;
+            color: #5a5a5a;
         }
 
-        .skill:hover {
-            transform: translateX(10px);
-            border-color: #9333ea;
+        .credential::before {
+            content: '✓';
+            color: #d97706;
+            font-weight: 700;
+            margin-right: 1rem;
+            font-size: 1.2rem;
         }
 
-        .skill h3 {
-            color: #dc2626;
-            margin-bottom: 0.5rem;
+        /* Pricing Section */
+        .pricing {
+            background: #ebe7dc;
         }
 
-        /* Videos Section */
-        .videos {
-            padding: 6rem 2rem;
-            background: #0f0f0f;
-        }
-
-        .videos h2 {
-            font-size: 3rem;
-            margin-bottom: 3rem;
-            text-align: center;
-        }
-
-        .video-grid {
-            max-width: 1200px;
+        .pricing-container {
+            max-width: 1000px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: 1fr 1fr;
             gap: 2rem;
         }
 
-        .video-card {
-            background: #1a1a1a;
-            border-radius: 15px;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .video-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(220, 38, 38, 0.3);
-        }
-
-        .video-placeholder {
-            width: 100%;
-            height: 200px;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 3rem;
-            color: #dc2626;
-        }
-
-        .video-info {
-            padding: 1.5rem;
-        }
-
-        .video-info h3 {
-            margin-bottom: 0.5rem;
-            color: #fff;
-        }
-
-        .video-info p {
-            color: #999;
-        }
-
-        /* Contact Section */
-        .contact {
-            padding: 6rem 2rem;
+        .pricing-card {
+            background: #f5f1e8;
+            padding: 3rem;
             text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
+            position: relative;
+            transition: all 0.3s ease;
         }
 
-        .contact h2 {
-            font-size: 3rem;
+        .pricing-card.featured {
+            background: white;
+            border: 2px solid #d97706;
+            transform: scale(1.05);
+        }
+
+        .pricing-badge {
+            background: #d97706;
+            color: white;
+            padding: 0.5rem 1.5rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Arial', sans-serif;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+
+        .price {
+            font-size: 3.5rem;
+            font-weight: 600;
+            color: #d97706;
+            margin: 1.5rem 0;
+        }
+
+        .price-note {
+            color: #8b7355;
+            font-size: 0.9rem;
             margin-bottom: 2rem;
         }
 
-        .contact p {
-            font-size: 1.3rem;
-            color: #ccc;
-            margin-bottom: 3rem;
+        .pricing-features {
+            text-align: left;
+            margin-bottom: 2rem;
         }
 
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
+        .pricing-features li {
+            color: #5a5a5a;
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
         }
 
-        .social-link {
-            display: inline-block;
-            padding: 1rem 2rem;
-            background: #1a1a1a;
-            color: white;
-            text-decoration: none;
-            border-radius: 10px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
+        .pricing-features li::before {
+            content: '✓';
+            color: #d97706;
+            position: absolute;
+            left: 0;
+            font-weight: 700;
         }
 
-        .social-link:hover {
-            background: transparent;
-            border-color: #dc2626;
-            color: #dc2626;
+        .guarantee {
+            background: #ebe7dc;
+            padding: 1.5rem;
+            margin-top: 3rem;
+            text-align: center;
+            border: 2px solid #d97706;
+        }
+
+        .guarantee strong {
+            color: #d97706;
+            display: block;
+            margin-bottom: 0.5rem;
         }
 
         /* Footer */
         footer {
-            padding: 2rem;
+            padding: 3rem 2rem;
             text-align: center;
-            background: #0a0a0a;
-            color: #666;
-            border-top: 1px solid #1a1a1a;
+            background: #e5e1d6;
+            color: #8b7355;
+            border-top: 1px solid #d4cfc0;
         }
 
         /* Responsive */
-        @media (max-width: 768px) {
+        @media (max-width: 968px) {
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-image {
+                height: 500px;
+                order: -1;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-container {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+
             h1 {
-                font-size: 3rem;
+                font-size: 2.5rem;
             }
 
-            .tagline {
-                font-size: 1.2rem;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .video-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .about h2, .videos h2, .contact h2 {
+            .section-title {
                 font-size: 2rem;
             }
         }
 
-        /* Scroll indicator */
-        .scroll-indicator {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateX(-50%) translateY(0);
+        @media (max-width: 640px) {
+            .stats {
+                flex-direction: column;
+                gap: 1.5rem;
             }
-            40% {
-                transform: translateX(-50%) translateY(-10px);
-            }
-            60% {
-                transform: translateX(-50%) translateY(-5px);
-            }
-        }
-
-        .scroll-indicator::after {
-            content: '↓';
-            font-size: 2rem;
-            color: #dc2626;
         }
     </style>
 </head>
 <body>
     <!-- Hero Section -->
     <section class="hero">
+        <div class="hero-image" style="background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAH0AooDASIAAhEBAxEB/8QAHAABAAEFAQEAAAAAAAAAAAAAAAECAwQFBgcI/8QAThAAAQMDAgMFBQMIBwYFBAMAAQACAwQFEQYhEjFBBxMiUWEUMnGBkRWhsSIzQlJicoLBCBYkU3Oi0RcldLLC4SU0Q1SS8RdzNqL/xAAaAQEBAQEBAQEAAAAAAAAAAAAAAgEDBAUG/8QALREBAQACAgEDAwMEAgMAAAAAAAECEQMSBCExE0FRBSIyFGGBkTNCcaHx/9oADAMBAAIRAxEAPwD6pREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERARY19u9PRRMfTxl0gk8R5NHLfz3Wy9V'>">
+            <!-- Replace the data:image URL above with actual image path -->
+        </div>
         <div class="hero-content">
-            <h1>JACOB</h1>
-            <p class="tagline">Shredder. Virtuoso. Guitar God.</p>
-            <a href="#contact" class="cta-button">Let's Connect</a>
+            <p class="eyebrow">Online Guitar Mastery</p>
+            <h1>Master Guitar with Confidence</h1>
+            <p class="hero-description">
+                Join hundreds of guitarists who transformed from struggling beginners 
+                to confident players with Jacob Irwin's proven step-by-step system.
+            </p>
+            <a href="#pricing" class="cta-primary">View Course Options</a>
+            
+            <div class="stats">
+                <div class="stat">
+                    <span class="stat-number">500+</span>
+                    <span class="stat-label">Students</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">4.9★</span>
+                    <span class="stat-label">Rating</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Lessons</span>
+                </div>
+            </div>
         </div>
-        <div class="scroll-indicator"></div>
     </section>
 
-    <!-- About Section -->
-    <section class="about">
-        <h2>About</h2>
-        <div class="about-content">
+    <!-- Problems Section -->
+    <section class="problems">
+        <div class="section-container">
+            <h2 class="section-title">Common Challenges</h2>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <h3>Plateau & Frustration</h3>
+                    <p>Practice for hours but see no real progress. Skills stuck at the same level for months.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>Overwhelming Information</h3>
+                    <p>YouTube tutorials are scattered. You don't know what to practice or in what order.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>Bad Habits</h3>
+                    <p>Poor technique holding you back. Fighting against yourself every time you play.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Modules -->
+    <section class="course">
+        <h2 class="section-title">What You'll Learn</h2>
+        <div class="modules-grid">
+            <div class="module">
+                <div class="module-header">
+                    <div class="module-number">1</div>
+                    <h3>Foundation & Technique</h3>
+                </div>
+                <p>Master proper hand positioning, pick control, and exercises that build muscle memory.</p>
+            </div>
+
+            <div class="module">
+                <div class="module-header">
+                    <div class="module-number">2</div>
+                    <h3>Essential Chords</h3>
+                </div>
+                <p>Learn core chord shapes and develop smooth transitions that sound professional.</p>
+            </div>
+
+            <div class="module">
+                <div class="module-header">
+                    <div class="module-number">3</div>
+                    <h3>Rhythm & Strumming</h3>
+                </div>
+                <p>Develop rock-solid rhythm skills and master strumming patterns for any style.</p>
+            </div>
+
+            <div class="module">
+                <div class="module-header">
+                    <div class="module-number">4</div>
+                    <h3>Scales & Lead Guitar</h3>
+                </div>
+                <p>Unlock the fretboard with essential scales and play melodic solos with confidence.</p>
+            </div>
+
+            <div class="module">
+                <div class="module-header">
+                    <div class="module-number">5</div>
+                    <h3>Song Application</h3>
+                </div>
+                <p>Apply everything to real songs, from classic rock to modern hits.</p>
+            </div>
+
+            <div class="module">
+                <div class="module-header">
+                    <div class="module-number">6</div>
+                    <h3>Practice Strategy</h3>
+                </div>
+                <p>Learn to practice efficiently so every 15 minutes counts more than hours of repetition.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <h2 class="section-title">Student Success Stories</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial">
+                <p class="testimonial-text">
+                    After 6 months of struggling on my own, Jacob's course helped me breakthrough in just 3 weeks.
+                </p>
+                <p class="testimonial-author">Mike Rodriguez</p>
+                <p class="testimonial-meta">Beginner Guitarist</p>
+            </div>
+            <div class="testimonial">
+                <p class="testimonial-text">
+                    I'd been playing for a year but had terrible technique. Jacob's foundation module completely transformed my playing.
+                </p>
+                <p class="testimonial-author">Sarah Chen</p>
+                <p class="testimonial-meta">Intermediate Player</p>
+            </div>
+            <div class="testimonial">
+                <p class="testimonial-text">
+                    Best investment I've made in my musical journey. Clear lessons, practical exercises, and real results.
+                </p>
+                <p class="testimonial-author">David Martinez</p>
+                <p class="testimonial-meta">6-Month Student</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section>
+        <div class="about">
+            <div class="about-image"></div>
             <div class="about-text">
+                <h2>Meet Jacob Irwin</h2>
                 <p>
-                    Jacob is a guitarist who doesn't just play—he commands the fretboard with precision, 
-                    passion, and power. From blistering solos to intricate melodies, every note is a 
-                    statement of technical mastery and raw musical expression.
+                    With over 10 years of guitar experience and hundreds of students taught, Jacob knows exactly 
+                    what holds beginners back—and how to fix it.
                 </p>
-                <p style="margin-top: 1.5rem;">
-                    Whether it's metal, rock, or experimental soundscapes, Jacob brings an unmatched 
-                    intensity and creativity to every performance.
+                <p>
+                    A teaching system refined over years that delivers real, measurable progress. 
+                    No fluff, no overwhelming theory—just practical skills you can apply immediately.
                 </p>
-            </div>
-            <div class="skills">
-                <div class="skill">
-                    <h3>Lead Guitar</h3>
-                    <p>Lightning-fast solos and melodic mastery</p>
-                </div>
-                <div class="skill">
-                    <h3>Rhythm & Riffs</h3>
-                    <p>Heavy grooves and tight precision</p>
-                </div>
-                <div class="skill">
-                    <h3>Composition</h3>
-                    <p>Original music that pushes boundaries</p>
+                <div class="credentials">
+                    <div class="credential">10+ years guitar performance</div>
+                    <div class="credential">500+ students worldwide</div>
+                    <div class="credential">Beginner-to-intermediate specialist</div>
+                    <div class="credential">Proven practice systems</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Videos Section -->
-    <section class="videos">
-        <h2>Shred Reel</h2>
-        <div class="video-grid">
-            <div class="video-card">
-                <div class="video-placeholder">🎸</div>
-                <div class="video-info">
-                    <h3>Epic Solo #1</h3>
-                    <p>Add your YouTube/Instagram link here</p>
-                </div>
+    <!-- Pricing -->
+    <section class="pricing" id="pricing">
+        <h2 class="section-title">Choose Your Path</h2>
+        <div class="pricing-container">
+            <div class="pricing-card">
+                <h3>Foundation</h3>
+                <div class="price">$297</div>
+                <p class="price-note">or $107/month × 3</p>
+                <ul class="pricing-features">
+                    <li>Modules 1-3</li>
+                    <li>25+ video lessons</li>
+                    <li>Basic practice materials</li>
+                    <li>Lifetime access</li>
+                </ul>
+                <a href="#" class="cta-primary">Get Started</a>
             </div>
-            <div class="video-card">
-                <div class="video-placeholder">🎸</div>
-                <div class="video-info">
-                    <h3>Latest Cover</h3>
-                    <p>Add your YouTube/Instagram link here</p>
-                </div>
-            </div>
-            <div class="video-card">
-                <div class="video-placeholder">🎸</div>
-                <div class="video-info">
-                    <h3>Original Track</h3>
-                    <p>Add your YouTube/Instagram link here</p>
-                </div>
+
+            <div class="pricing-card featured">
+                <div class="pricing-badge">Most Popular</div>
+                <h3>Complete Mastery</h3>
+                <div class="price">$597</div>
+                <p class="price-note">or $217/month × 3</p>
+                <ul class="pricing-features">
+                    <li>All 6 modules</li>
+                    <li>50+ video lessons</li>
+                    <li>Complete practice library</li>
+                    <li>Monthly live Q&A sessions</li>
+                    <li>Student community access</li>
+                    <li>Lifetime access + updates</li>
+                </ul>
+                <a href="#" class="cta-primary">Enroll Now</a>
             </div>
         </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <h2>Get In Touch</h2>
-        <p>Want to collaborate, book a session, or just talk gear? Let's connect.</p>
-        <div class="social-links">
-            <a href="#" class="social-link">Instagram</a>
-            <a href="#" class="social-link">YouTube</a>
-            <a href="#" class="social-link">TikTok</a>
-            <a href="mailto:jacob@example.com" class="social-link">Email</a>
+        <div class="guarantee">
+            <strong>60-Day Money-Back Guarantee</strong>
+            If you're not satisfied with your progress in 60 days, get a full refund. No questions asked.
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Jacob. All rights reserved. Keep shredding. 🎸</p>
+        <p>&copy; 2025 Jacob Irwin Guitar. All rights reserved.</p>
     </footer>
 </body>
 </html>
